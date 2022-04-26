@@ -1,0 +1,19 @@
+﻿@page
+@using System.Data;
+@model HelpModel
+@{
+    ViewData["Title"] = "Help";
+    var dataSet = (DataSet)ViewData["DataSet"];
+}
+<h2>Data From Database</h2>
+
+<table>
+    @foreach (DataRow row in dataSet.Tables[0].Rows)
+    {
+        <tr> @foreach (var column in row.ItemArray) 
+            { 
+                <td>@column</td> 
+            }
+        </tr>
+    }
+</table>
