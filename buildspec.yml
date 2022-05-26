@@ -1,0 +1,31 @@
+version: 0.2
+phases:    
+  install:
+    runtime-versions:
+      dotnet: 3.1
+        
+  pre_build:
+    commands:
+      - echo SLW-App Restore started on `date`
+      - cd SLW-App
+      - dotnet restore
+      - cd ..
+      - echo MVC-WebApp
+      - dotnet restore
+
+
+#  build:
+ #   commands:
+  #    - echo Build started on `date`
+   #   - dotnet publish /p:GenerateRuntimeConfigurationFiles=true
+    #  - cd ..
+     # - cd ..
+   #   - sam package --template-file template.yaml --resolve-s3 --output-template-file template.yaml
+    #  - sam deploy --template-file template.yaml --stack-name WS-POC-3 --capabilities CAPABILITY_IAM --no-confirm-changeset
+artifacts:
+ # type: zip
+  files:
+#    - '**/*'
+     - appspec.yml
+     - template.yaml
+    # - '**/*'
