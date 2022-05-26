@@ -20,10 +20,12 @@ phases:
       - pwd
       - cd SLW-App
       - dotnet publish
+      - dotnet run
       - echo MVC-WebApp
       - cd ..
       - cd MVC-WebApp
       - dotnet publish
+      - dotnet run
     #  - cd ..
      # - cd ..
    #   - sam package --template-file template.yaml --resolve-s3 --output-template-file template.yaml
