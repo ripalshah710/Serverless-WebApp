@@ -12,12 +12,12 @@ phases:
       - cd ..
       - echo MVC-WebApp
       - dotnet restore
-      - cd ..
 
 
   build:
     commands:
       - echo SLW-App Build started on `date`
+      - pwd
       - cd SLW-App
       - dotnet publish
       - echo MVC-WebApp
