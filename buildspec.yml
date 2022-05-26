@@ -12,20 +12,26 @@ phases:
       - cd ..
       - echo MVC-WebApp
       - dotnet restore
+      - cd ..
 
 
-#  build:
- #   commands:
-  #    - echo Build started on `date`
-   #   - dotnet publish /p:GenerateRuntimeConfigurationFiles=true
+  build:
+    commands:
+      - echo SLW-App Build started on `date`
+      - cd SLW-App
+      - dotnet publish
+      - echo MVC-WebApp
+      - cd ..
+      - cd MVC-WebApp
+      - dotnet publish
     #  - cd ..
      # - cd ..
    #   - sam package --template-file template.yaml --resolve-s3 --output-template-file template.yaml
     #  - sam deploy --template-file template.yaml --stack-name WS-POC-3 --capabilities CAPABILITY_IAM --no-confirm-changeset
-artifacts:
+#artifacts:
  # type: zip
-  files:
+ # files:
 #    - '**/*'
-     - appspec.yml
-     - template.yaml
+  #   - appspec.yml
+   #  - template.yaml
     # - '**/*'
