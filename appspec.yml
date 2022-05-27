@@ -1,8 +1,8 @@
 version: 0.0
 os: linux
 files:
-  - source: /MVC-WebApp
-    destination: /SessionInfoApi.csproj
+  - source: /
+    destination: /MVC-WebApp/MVC-WebApp.csproj
 #  - source: source
 #    destination: /webapps/myApp
 hooks:
