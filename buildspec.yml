@@ -24,7 +24,7 @@ phases:
     #  - cd ..
       - cd MVC-WebApp
       - dotnet publish
-      - dotnet run
+#      - dotnet run
 #artifacts:
  # type: zip
  # files:
