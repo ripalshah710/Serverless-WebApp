@@ -25,10 +25,10 @@ phases:
       - cd MVC-WebApp
       - dotnet publish
 #      - dotnet run
-#artifacts:
+artifacts:
  # type: zip
- # files:
+  files:
 #    - '**/*'
-  #   - appspec.yml
+     - appspec.yml
    #  - template.yaml
     # - '**/*'
