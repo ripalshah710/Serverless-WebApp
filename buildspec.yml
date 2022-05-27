@@ -6,28 +6,25 @@ phases:
         
   pre_build:
     commands:
-      - echo SLW-App Restore started on `date`
-      - cd SLW-App
-      - dotnet restore
-      - cd ..
+#      - echo SLW-App Restore started on `date`
+ #     - cd SLW-App
+  #    - dotnet restore
+   #   - cd ..
       - echo MVC-WebApp
       - dotnet restore
 
 
   build:
     commands:
-      - echo SLW-App Build started on `date`
-      - pwd
-      - cd SLW-App
-      - dotnet publish
+#      - echo SLW-App Build started on `date`
+ #     - pwd
+  #    - cd SLW-App
+   #   - dotnet publish
       - echo MVC-WebApp
-      - cd ..
+    #  - cd ..
       - cd MVC-WebApp
       - dotnet publish
-     #  - cd ..
-     # - cd ..
-   #   - sam package --template-file template.yaml --resolve-s3 --output-template-file template.yaml
-    #  - sam deploy --template-file template.yaml --stack-name WS-POC-3 --capabilities CAPABILITY_IAM --no-confirm-changeset
+      - dotnet run
 #artifacts:
  # type: zip
  # files:
