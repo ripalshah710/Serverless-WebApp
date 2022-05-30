@@ -1,33 +1,21 @@
-##version: 0.0
-##os: linux
-##files:
-  ##- source: /
-    ##destination: /MVC-WebApp/MVC-WebApp.csproj
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /MVC-WebApp/MVC-WebApp.csproj
 #  - source: source
 #    destination: /webapps/myApp
-##hooks:
-  ##BeforeInstall:
+hooks:
+  BeforeInstall:
 #    - location: Scripts/UnzipResourceBundle.sh
 #    - location: Scripts/UnzipDataBundle.sh
-  ##AfterInstall:
+  AfterInstall:
 #    - location: Scripts/RunResourceTests.sh
 #      timeout: 180
-  ##ApplicationStart:
+  ApplicationStart:
 #    - location: Scripts/RunFunctionalTests.sh
 #      timeout: 3600
-  ##ValidateService:
+  ValidateService:
 #    - location: Scripts/MonitorService.sh
 #      timeout: 3600
 #      runas: codedeployuser
-version: 0.0
-Resources:
-  - Serverless-WeApp-Lambda-demo:
-      Type: AWS::Lambda::Function
-      Properties:
-        Name: "Serverless-WeApp-Lambda-demo"
-        Alias: "Serverless-WeApp-Lambda-demoAlias"
-        CurrentVersion: "1"
-        TargetVersion: "2"
-Hooks:
-  - BeforeAllowTraffic: "LambdaFunctionToValidateBeforeTrafficShift"
-  - AfterAllowTraffic: "LambdaFunctionToValidateAfterTrafficShift"
